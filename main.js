@@ -17,7 +17,7 @@ function populateBoard(size){
     }
 }
 
-populateBoard(16);s
+populateBoard(16);
 
 function changeSize(input) {
     if (input >= 2 && input <= 100) {
@@ -29,7 +29,7 @@ function changeSize(input) {
 
 function colorSquare() {
     if (click) {
-        if(color === 'random'){
+        if (color === 'random') {
             this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
         } else{
             this.style.backgroundColor = color;
@@ -49,5 +49,9 @@ function resetBoard() {
 
 document.querySelector("body").addEventListener("click", () => {
     click = !click;
-    
+    if (click) {
+        document.querySelector('.mode').textContent = "Mode: Colouring";
+    } else {
+        document.querySelector('.mode').textContent = "Mode: Not Colouring";
+    }
 });
