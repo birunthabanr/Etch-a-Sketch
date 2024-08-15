@@ -47,11 +47,13 @@ function resetBoard() {
     squares.forEach((div) => (div.style.backgroundColor = 'white'));
 }
 
-document.querySelector("body").addEventListener("click", () => {
-    click = !click;
-    if (click) {
-        document.querySelector('.mode').textContent = "Mode: Colouring";
-    } else {
-        document.querySelector('.mode').textContent = "Mode: Not Colouring";
+document.querySelector("body").addEventListener("click", (e) => {
+    if (e.target.tagName != 'BUTTON'){
+        click = !click;
+        if (click) {
+            document.querySelector('.mode').textContent = "Mode: Colouring";
+        } else {
+            document.querySelector('.mode').textContent = "Mode: Not Colouring";
+        }
     }
 });
